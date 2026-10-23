@@ -1,0 +1,1 @@
+# Usernames you never want on the board. One per line, lowercase.

@@ -1,0 +1,27 @@
+# Short words that hide a username only as a separate word or the whole name.
+# (So "ass" hides "ass_man" and "ass" but not "assassin" or "classic".)
+ass
+arse
+cum
+tit
+hoe
+fag
+sex
+gay
+cuck
+nut
+jizz
+coom
+kys
+die
+kill
+thot
+simp
+pimp
+nob
+knob
+poop
+piss
+damn
+hell
+crap
