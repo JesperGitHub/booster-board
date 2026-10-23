@@ -1,6 +1,6 @@
 # Booster Board
 
-Every 6 hours GitHub asks Discord who boosts the server, removes bad names
+Every 30 minutes GitHub asks Discord who boosts the server, removes bad names
 and saves them in `boosters.txt`. The VRChat world reads that file.
 
 - `allow.txt`        names that got hidden by mistake (one per line)
@@ -11,3 +11,8 @@ and saves them in `boosters.txt`. The VRChat world reads that file.
 
 Boosters can hide themselves by getting the Discord role `hide-from-board`.
 Run it right now: Actions tab > Update boosters > Run workflow.
+
+## Booster perks (titles etc.)
+Boosters click "Get my code" in the world and post `CODE TheirVRChatName` in #booster-link.
+The bot reacts with a check mark if it worked (a cross if not), and puts them in `boosters_vrc.txt`
+(as a hash, not the name). The world gives them their perks.
