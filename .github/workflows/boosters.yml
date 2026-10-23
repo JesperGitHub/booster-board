@@ -2,7 +2,7 @@ name: Update boosters
 
 on:
   schedule:
-    - cron: "17 */6 * * *"     # every 6 hours
+    - cron: "*/30 * * * *"     # every 30 minutes
   workflow_dispatch:            # "Run workflow" button
 
 permissions:
@@ -12,8 +12,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Get boosters from Discord
@@ -21,9 +21,10 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GUILD_ID: ${{ secrets.GUILD_ID }}
-      - name: Save boosters.txt
+          LINK_SALT: ${{ secrets.LINK_SALT }}
+      - name: Save the lists
         run: |
           git config user.name "booster-bot"
           git config user.email "booster-bot@users.noreply.github.com"
-          git add boosters.txt
+          git add boosters.txt boosters_vrc.txt
           git diff --cached --quiet || (git commit -m "Update boosters" && git push)
